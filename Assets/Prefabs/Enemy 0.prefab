@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: -4378843422325796794}
   - component: {fileID: 3962947725679886072}
   - component: {fileID: -3514891555887758312}
+  - component: {fileID: -4538369657016371445}
   m_Layer: 6
   m_Name: Enemy 0
   m_TagString: Enemy
@@ -208,8 +209,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 396abd14c71a7104c828f5bc112bef30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 0
+  score: 50
   health: 20
   hitEffect: {fileID: 4641330021314923240, guid: c9ec56486340040408480b8d6e92477a, type: 3}
+  isAppliedCameraShake: 0
 --- !u!114 &3962947725679886072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  isProjectile: 0
 --- !u!114 &-3514891555887758312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,3 +248,18 @@ MonoBehaviour:
   miniumFiringRate: 0.7
   useAI: 1
   isFiring: 0
+--- !u!114 &-4538369657016371445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5741828062580202457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666bb45ba019eca449b6133d2fa8735f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 2416039494027931374, guid: 19eb08c63d7bfea49908ccbd1b3931e9, type: 3}
+  amountToPool: 20

@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 9055067708450903404}
   - component: {fileID: 4686226107291983816}
   - component: {fileID: 7611791796346145717}
+  - component: {fileID: 5296624908016337808}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -264,6 +265,21 @@ MonoBehaviour:
   projectileLifetime: 5
   baseFiringRate: 0.2
   firingRateVariance: 0
-  miniumFiringRate: 0.7
+  miniumFiringRate: 0.2
   useAI: 0
   isFiring: 0
+--- !u!114 &5296624908016337808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8354708554822123622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666bb45ba019eca449b6133d2fa8735f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 3113065519907042671, guid: 74cd8ff93166bcc48943352ab07f9315, type: 3}
+  amountToPool: 100

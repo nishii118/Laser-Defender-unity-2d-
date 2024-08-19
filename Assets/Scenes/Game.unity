@@ -1232,13 +1232,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7611791796346145717, guid: 82efc257c0156f44a8127696ed717b41, type: 3}
-      propertyPath: miniumFiringRate
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7611791796346145717, guid: 82efc257c0156f44a8127696ed717b41, type: 3}
-      propertyPath: firingRateVariance
-      value: 0
+    - target: {fileID: 5296624908016337808, guid: 82efc257c0156f44a8127696ed717b41, type: 3}
+      propertyPath: amountToPool
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8354708554822123622, guid: 82efc257c0156f44a8127696ed717b41, type: 3}
       propertyPath: m_Name

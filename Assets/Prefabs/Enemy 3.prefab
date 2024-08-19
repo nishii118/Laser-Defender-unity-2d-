@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4538369657016371445, guid: 63cb1ffa19635574597916e75b122988, type: 3}
+      propertyPath: amountToPool
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: -4538369657016371445, guid: 63cb1ffa19635574597916e75b122988, type: 3}
+      propertyPath: objectToPool
+      value: 
+      objectReference: {fileID: 2416039494027931374, guid: 19eb08c63d7bfea49908ccbd1b3931e9, type: 3}
     - target: {fileID: -4378843422325796794, guid: 63cb1ffa19635574597916e75b122988, type: 3}
       propertyPath: hitEffect
       value: 
@@ -107,6 +115,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5741828062580202457, guid: 63cb1ffa19635574597916e75b122988, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7250009642673972761}
+    - targetCorrespondingSourceObject: {fileID: 5741828062580202457, guid: 63cb1ffa19635574597916e75b122988, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3151031711086164763}
   m_SourcePrefab: {fileID: 100100000, guid: 63cb1ffa19635574597916e75b122988, type: 3}
 --- !u!1 &7320082573050998810 stripped
 GameObject:
@@ -187,8 +198,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 396abd14c71a7104c828f5bc112bef30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 0
+  score: 50
   health: 20
   hitEffect: {fileID: 0}
+  isAppliedCameraShake: 0
 --- !u!114 &3457827181146163908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  isProjectile: 0
 --- !u!114 &7250009642673972761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,3 +237,18 @@ MonoBehaviour:
   miniumFiringRate: 0.7
   useAI: 0
   isFiring: 0
+--- !u!114 &-3151031711086164763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7320082573050998810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666bb45ba019eca449b6133d2fa8735f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 0}
+  amountToPool: 0

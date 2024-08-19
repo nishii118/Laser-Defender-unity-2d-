@@ -5,21 +5,27 @@ using UnityEngine;
 public class DamageDealer : MonoBehaviour
 {
     [SerializeField] int damage = 10;
+    [SerializeField] bool isProjectile;
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        
+
     }
 
-    public int GetDamage() {
+    public int GetDamage()
+    {
         return damage;
     }
 
-    public void Hit() {
-        Destroy(gameObject);
+    public void Hit()
+    {
+        if (!isProjectile)
+        {
+            Destroy(gameObject);
+        }
     }
 }

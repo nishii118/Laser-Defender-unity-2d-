@@ -75,6 +75,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5741828062580202457, guid: 63cb1ffa19635574597916e75b122988, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5449023824663098860}
+    - targetCorrespondingSourceObject: {fileID: 5741828062580202457, guid: 63cb1ffa19635574597916e75b122988, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1694578858005250989}
   m_SourcePrefab: {fileID: 100100000, guid: 63cb1ffa19635574597916e75b122988, type: 3}
 --- !u!1 &685637534642340777 stripped
 GameObject:
@@ -155,8 +158,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 396abd14c71a7104c828f5bc112bef30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 0
+  score: 50
   health: 20
   hitEffect: {fileID: 0}
+  isAppliedCameraShake: 0
 --- !u!114 &-7701613587635511551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  isProjectile: 0
 --- !u!114 &5449023824663098860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,3 +197,18 @@ MonoBehaviour:
   miniumFiringRate: 0.7
   useAI: 0
   isFiring: 0
+--- !u!114 &-1694578858005250989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685637534642340777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666bb45ba019eca449b6133d2fa8735f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 0}
+  amountToPool: 0

@@ -45,7 +45,7 @@ public class Health : MonoBehaviour
             audioPlayer.PlayGetDamageClip();
 
             PlayHitEffect();
-            damageDealer.Hit();
+            // damageDealer.Hit();
         }
     }
 

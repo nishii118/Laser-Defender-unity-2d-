@@ -17,12 +17,17 @@ public class Shooter : MonoBehaviour
     Coroutine firingCoroutine;
     AudioPlayer audioPlayer;
 
-    private void Awake() {
+    ObjectPool objectPool;
+
+    private void Awake()
+    {
         audioPlayer = FindObjectOfType<AudioPlayer>();
+        objectPool = GetComponent<ObjectPool>();
     }
     void Start()
     {
-        if (useAI) {
+        if (useAI)
+        {
             isFiring = true;
         }
     }
@@ -40,7 +45,7 @@ public class Shooter : MonoBehaviour
             firingCoroutine = StartCoroutine(FireContinuously());
 
         }
-        else if (!isFiring && firingCoroutine != null) 
+        else if (!isFiring && firingCoroutine != null)
         {
             StopCoroutine(firingCoroutine);
             firingCoroutine = null;
@@ -48,18 +53,38 @@ public class Shooter : MonoBehaviour
     }
     IEnumerator FireContinuously()
     {
+        // GameObject instance = objectPool.GetPooledObject();
+        // Debug.Log(instance);
+        // yield return new WaitForSeconds(0);
         while (true)
         {
-            GameObject instance = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            // GameObject instance = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
             // Debug.Log("instance is created");
-            Rigidbody2D rb = instance.GetComponent<Rigidbody2D>();
-            rb.velocity = transform.up * projectileSpeed;
-            Destroy(instance, projectileLifetime);
-            float timeToNextInstance = Random.Range(baseFiringRate - firingRateVariance, baseFiringRate + firingRateVariance);
-            timeToNextInstance = Mathf.Clamp(timeToNextInstance, miniumFiringRate, float.MaxValue);
-            audioPlayer.PlayShootingClip();
-            yield return new WaitForSeconds(timeToNextInstance);
+            GameObject instance = objectPool.GetPooledObject();
+            Debug.Log("get instance");
+            if (instance != null)
+            {
+                instance.transform.position = transform.position;
+                instance.transform.rotation = Quaternion.identity;
+                instance.SetActive(true);
 
+                Rigidbody2D rb = instance.GetComponent<Rigidbody2D>();
+                rb.velocity = transform.up * projectileSpeed;
+                // Destroy(instance, projectileLifetime);
+                // StartCoroutine(instance.SetActive(false));
+                float timeToNextInstance = Random.Range(baseFiringRate - firingRateVariance, baseFiringRate + firingRateVariance);
+                timeToNextInstance = Mathf.Clamp(timeToNextInstance, miniumFiringRate, float.MaxValue);
+                audioPlayer.PlayShootingClip();
+                StartCoroutine(DeleteBulletCoroutine(instance, projectileLifetime));
+
+                yield return new WaitForSeconds(timeToNextInstance);
+            }
         }
+    }
+
+    IEnumerator DeleteBulletCoroutine(GameObject instance, float projectileLifetime)
+    {
+        yield return new WaitForSeconds(projectileLifetime);
+        instance.SetActive(false);
     }
 }
